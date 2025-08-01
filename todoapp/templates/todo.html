@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#062e3f">
+    <meta name="Description" content="A dynamic and aesthetic To-Do List WebApp.">
+
+    <!-- Google Font: Quick Sand -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <!-- font awesome (https://fontawesome.com) for basic icons; source: https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/corner.css' %}">
+    <title>JUST DO IT</title>
+
+</head>
+
+<body>
+    {% csrf_token %}
+    <div id = "header">
+        <div class="flexrow-container">
+            <div class="standard-theme theme-selector"></div>
+            <div class="light-theme theme-selector"></div>
+            <div class="darker-theme theme-selector"></div>
+            <button class="theme theme-selector"><a href="/logoutt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                </svg>
+                </a>
+            </button>
+        </div>
+    
+<h1 id="title">Just do it.<div id="border"></div></h1>
+
+  <div id="form">
+        <form method="POST">
+            {% csrf_token %}
+            <input class="todo-input" type="text" placeholder="Add a task."  name="title" required>
+            <button class="todo-btn" type="submit">I Got This!</button>
+        </form>
+    </div>
+        <p><span id="datetime"></span></p>
+        <script src="{% static 'css/js/time.js' %}"></script>
+    </div>
+
+  <div id="myUnOrdList">
+        <ul class="todo-list">
+            {% for task in tasks %}
+                <div class="todo">
+                    <li>{{ task.title }}</li>
+                    <button class="check-btn"><i class="fas fa-check"></i></button>
+                    <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                </div> 
+            {% endfor %}
+        </ul>
+    </div>
+    <script src="{% static 'css/js/main.js' %}" type="text/javascript"> </script>
+</body>
+</html>

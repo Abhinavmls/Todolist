@@ -1,0 +1,83 @@
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items : center;
+    height : 100vh;
+    background-image: url("back3.jpg");
+    background-size: cover;
+}
+h1{
+    margin-top: 100px;
+    text-align: center;
+    color: rgb(16, 11, 11);
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+.wrapper{
+    border-radius: 40px;
+    box-shadow: 10px 8px 5px rgb(73, 87, 94);
+    
+}
+.wrapper input{
+    border-radius : 35px;
+    padding: 5px;
+    width: 200px;
+    height : 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right:50px ;
+    font-size: 15px;
+    background-color: rgb(208, 224, 241);
+    caret-color: rgb(106, 137, 163);
+    border: none;
+}
+.wrapper button{
+    padding : 5px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 30px;
+    margin-left: 90px;
+    margin-top: 20px;
+    margin-bottom : 50px;
+    padding : 10px 15px 10px;
+    border: none;
+    background-color: aliceblue;
+}
+.wrapper button:hover{
+    background-color: rgb(106, 137, 163);
+    color: rgb(102, 97, 192);
+}
+
+.wrapper label{
+    font-size: 20px;
+}
+.wrap{
+    text-align:end;
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.wrapper a{
+    text-decoration: none;
+    color: rgb(106, 137, 163);
+    font-size: 20px;
+    margin-left: 25%;
+    margin-bottom: 100px;
+    /* padding-bottom: 50px; */
+}
+.wrapper a:hover{
+    color: rgb(102, 97, 192);
+}
+.wrapper p{
+    text-align: center;
+    color: rgb(16, 11, 11);
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
